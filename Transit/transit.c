@@ -12,12 +12,12 @@ int T; // Occupation time in milliseconds
 
 sem_t binari; // Tracks semaphore
 int id = 0; // ID counter
-pthread_mutex_t id_lock; // ID mutex
+pthread_mutex_t id_lock= PTHREAD_MUTEX_INITIALIZER;; // ID mutex
 
 int treni_in_arrivo = 0;
 int treni_in_stazione = 0;
 int treni_completati = 0;
-pthread_mutex_t print; // Information mutex
+pthread_mutex_t print= PTHREAD_MUTEX_INITIALIZER;; // Information mutex
 
 // Train function
 void *train(void *arg) {
